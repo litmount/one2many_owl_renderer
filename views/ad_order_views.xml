@@ -1,0 +1,82 @@
+<odoo>
+
+    <record id="ad_order_form" model="ir.ui.view">
+        <field name="name">ad.order.form</field>
+        <field name="model">ad.order</field>
+        <field name="arch" type="xml">
+
+            <form>
+
+                <sheet>
+
+                    <group>
+
+                        <field name="name"/>
+                        <field name="customer_id"/>
+                        <field name="partner_id"/>
+
+                    </group>
+
+                    <notebook>
+
+                        <page string="Details">
+
+                            <field name="order_line_ids" widget="order_form"/>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+
+    <record id="action_ad_orders" model="ir.actions.act_window">
+        <field name="name">Ad Orders</field>
+        <field name="res_model">ad.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ad_order_lines" model="ir.actions.act_window">
+        <field name="name">Ad Orders Lines</field>
+        <field name="res_model">ad.order.line</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="ad_order_line_tree" model="ir.ui.view">
+        <field name="name">ad.order.line.tree</field>
+        <field name="model">ad.order.line</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" >
+                <field name="product_id"/>
+                <field name="month_code"/>
+                <field name="area_id"/>
+                <field name="size_id"/>
+                <field name="is_color"/>
+                <field name="is_back"/>
+                <field name="is_front"/>
+                <field name="issue_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_root_ad_orders"
+              name="Owl Test"
+              action="action_ad_orders"/>
+
+    <menuitem id="menu_ad_orders"
+              name="Ad Orders"
+              action="action_ad_orders"
+              parent="menu_root_ad_orders"
+              sequence="6"/>
+
+    <menuitem id="menu_ad_order_lines"
+              name="Ad Order Lines"
+              action="action_ad_order_lines"
+              parent="menu_root_ad_orders"
+              sequence="7"/>
+
+</odoo>

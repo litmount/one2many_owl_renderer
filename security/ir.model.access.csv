@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_ad_order,access_ad_order,model_ad_order,base.group_user,1,1,1,1
+access_ad_order_line,access_ad_order_line,model_ad_order_line,base.group_user,1,1,1,1
+access_fishwrapper_zone,fishwrapper.zone,model_fishwrapper_zone,,1,1,1,1
+access_fishwrapper_area,fishwrapper.area,model_fishwrapper_area,,1,1,1,1
+
+access_fishwrapper_ad_size,fishwrapper.ad.size,model_fishwrapper_ad_size,,1,1,1,1
